@@ -12,3 +12,12 @@ export function getAll(){
         payload: request
     }
 }
+
+export function addTodo(item){
+    const request = axios.post(BASE_URL + API_KEY, item);
+
+    return {
+        type: types.ADD_TODO,
+        payload: request
+    }
+}
