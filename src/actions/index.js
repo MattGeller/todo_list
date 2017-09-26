@@ -13,6 +13,24 @@ export function getAll(){
     }
 }
 
+export function getSingleTodo(id){
+    const request = axios.get(`${BASE_URL}/${id + API_KEY}`);
+
+    return {
+        type: types.GET_SINGLE,
+        payload: request
+    }
+}
+
+export function toggleComplete(id){
+    const request = axios.put(`${BASE_URL}/${id + API_KEY}`);
+
+    return {
+        type: types.TOGGLE_COMPLETE,
+        payload: request
+    }
+}
+
 export function addTodo(item){
     const request = axios.post(BASE_URL + API_KEY, item);
 
